@@ -1,3 +1,5 @@
+using DotNetMiddleware.Web.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,5 +23,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Add custom middleware
+app.UseMyCustomMiddleware();
 
 app.Run();
